@@ -1,18 +1,20 @@
-import React, { useContext } from 'react';
-import { observer } from 'mobx-react-lite';
-import { StoreContext } from './main';
+import React from 'react';
+import {Observer, observer} from 'mobx-react-lite';
+import { Route, Routes } from 'react-router-dom';
+import LoginPage from "./containers/login/login-page";
 
 const App: React.FC = observer(() => {
-  const { userStore } = useContext(StoreContext);
 
   return (
-    <div>
-      <h1>Inventory Management App</h1>
-      <p>Welcome, {userStore.user ? userStore.user.name : 'Guest'}!</p>
-      <button onClick={() => userStore.login({ name: 'Alice', email: 'alice@example.com' })}>
-        Log In as Alice
-      </button>
-    </div>
+    <Observer>
+      {() => (
+        <>
+          <Routes>
+            <Route path="login" element={<LoginPage />} />
+          </Routes>
+        </>
+      )}
+    </Observer>
   );
 });
 
