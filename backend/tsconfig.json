@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "moduleResolution": "node",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -12,7 +11,34 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "skipLibCheck": true
-  },
-  "exclude": ["node_modules", "dist"]
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@src/*": [
+        "src/*"
+      ],
+      "@db/*": [
+        "src/db/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
+      ],
+      "@resources/*": [
+        "src/resources/*"
+      ],
+      "@common/*": [
+        "src/common/*"
+      ],
+      "@repositories/*": [
+        "src/repositories/*"
+      ]
+    }
+  }
 }
